@@ -5,6 +5,9 @@
 /.idea/
 .idea/*
 
+/build/
+build/*
+
 # Log file
 *.log
 

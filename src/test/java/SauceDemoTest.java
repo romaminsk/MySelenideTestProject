@@ -12,7 +12,7 @@ public class SauceDemoTest {
         open("https://www.saucedemo.com/");
 
         $(By.id("user-name")).setValue("standard_user");
-        $(By.id("password")).setValue("secret_sauce");
+        $(By.id("password")).setValue("111");
         $(By.id("login-button")).click();
 
         $(By.xpath("//span[@class='title']")).shouldHave(text("Products"));
