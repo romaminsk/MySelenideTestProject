@@ -1,6 +1,7 @@
 import com.codeborne.selenide.SelenideElement;
 import org.example.steps.LoginSteps;
 import org.example.steps.ProductsSteps;
+import org.example.utils.Waiters;
 import org.testng.annotations.Test;
 
 public class SauceDemoTest extends BaseTest {
@@ -21,6 +22,7 @@ public class SauceDemoTest extends BaseTest {
         String productName = cheapestProduct.find(".inventory_item_name").getText();
         productsSteps.addProductToCart(cheapestProduct);
         productsSteps.goToCart();
+        Waiters.sleep();
         productsSteps.verifyProductInCart(productName);
     }
 }
