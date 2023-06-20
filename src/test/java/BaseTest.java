@@ -19,6 +19,7 @@ public class BaseTest {
                 .savePageSource(true)
                 .enableLogs(LogType.BROWSER, Level.ALL));
 
+        Configuration.browserSize = "1920x1080";
         Configuration.browser =CHROME;
     }
 
