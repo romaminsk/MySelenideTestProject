@@ -2,22 +2,21 @@ package org.example.steps;
 
 import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-import org.openqa.selenium.By;
-
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$;
+import org.example.page.CartPage;
+import org.example.page.ProductsPage;
 
 public class ProductsSteps {
 
+    ProductsPage productsPage = new ProductsPage();
+    CartPage cartPage = new CartPage();
+
     public SelenideElement findCheapestPrice() {
-        ElementsCollection productPrices = $$(By.xpath("//div[@class=\"inventory_item_price\"]"));
 
         double lowestPrice = Double.MAX_VALUE;
         SelenideElement cheapestProduct = null;
 
-        for (SelenideElement productPrice : productPrices) {
+        for (SelenideElement productPrice : productsPage.productPricesText) {
             SelenideElement product = productPrice.closest("div[contains(@class, 'inventory_item')]");
             String priceText = productPrice.getText().replace("$", "");
             double price = Double.parseDouble(priceText);
@@ -35,11 +34,11 @@ public class ProductsSteps {
     }
 
     public void goToCart() {
-        $(".shopping_cart_link").click();
+        productsPage.shoppingCartLink.click();
     }
 
     public void verifyProductInCart(String productName) {
-        $$(".inventory_item_name")
+        cartPage.inventoryItemsNameText
                 .filter(Condition.text(productName))
                 .shouldHave(CollectionCondition.sizeGreaterThan(0));
     }
