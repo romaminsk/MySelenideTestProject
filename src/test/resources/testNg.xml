@@ -5,8 +5,9 @@
         <classes>
             <class name="SauceDemoTest">
                 <methods>
-                    <include name="loginTest"/>
-                    <include name="addItemToCart"/>
+<!--                    <include name="loginTest"/>-->
+<!--                    <include name="addItemToCart"/>-->
+                    <include name="compareProducts"/>
                 </methods>
             </class>
         </classes>

@@ -12,4 +12,5 @@ public class ProductsPage {
     public ElementsCollection productPricesText = $$(By.xpath("//div[@class='inventory_item_price']"));
     public SelenideElement shoppingCartLink = $(By.xpath("//a[@class='shopping_cart_link']"));
     public SelenideElement titleText = $(By.xpath("//span[@class='title']"));
+    public SelenideElement firstAddToCartButton = $$(By.id("add-to-cart-sauce-labs-backpack")).first();
 }
