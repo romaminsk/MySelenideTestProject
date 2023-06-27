@@ -1,15 +1,39 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="MainTest">
 
-    <test name="MainTest" parallel="false">
+<suite name="MainTest" parallel="tests" thread-count="2">
+
+    <test name="1">
+
+        <parameter name="startType" value="selenoid"/>
+        <parameter name="browser" value="chrome"/>
+        <parameter name="version" value="latest"/>
+
         <classes>
             <class name="SauceDemoTest">
                 <methods>
-<!--                    <include name="loginTest"/>-->
-<!--                    <include name="addItemToCart"/>-->
+                    <include name="loginTest"/>
+                    <include name="addItemToCart"/>
                     <include name="compareProducts"/>
                 </methods>
             </class>
         </classes>
     </test>
+
+    <test name="2">
+
+        <parameter name="startType" value="selenoid"/>
+        <parameter name="browser" value="chrome"/>
+        <parameter name="version" value="latest"/>
+
+        <classes>
+            <class name="SauceDemoTest">
+                <methods>
+                    <include name="loginTest"/>
+                    <include name="addItemToCart"/>
+                    <include name="compareProducts"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
 </suite>
