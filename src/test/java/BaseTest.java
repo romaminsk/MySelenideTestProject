@@ -3,7 +3,10 @@ import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import io.qameta.allure.selenide.LogType;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -18,7 +21,7 @@ public class BaseTest {
     private final ResourceBundle bundle = ResourceBundle.getBundle("test_framework");
     private final String URL = bundle.getString("path_to_url");
 
-    @BeforeClass
+    @BeforeMethod
     @Parameters({"startType", "browser", "version"})
     public void start(String startType,
                       @Optional("browser") String browser,
@@ -28,10 +31,6 @@ public class BaseTest {
         } else if (startType.equals("selenoid")) {
             startSelenoid(browser, version);
         }
-    }
-
-    @BeforeMethod
-    public void goToUrl() {
         open(URL);
     }
 
@@ -56,6 +55,7 @@ public class BaseTest {
                 .savePageSource(true)
                 .enableLogs(LogType.BROWSER, Level.ALL));
         Configuration.browserSize = "1920x1080";
+        Configuration.driverManagerEnabled = false;
         Configuration.remote = "http://localhost:4444/wd/hub";
         Configuration.browser = browser;
 
