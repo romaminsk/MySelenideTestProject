@@ -6,8 +6,8 @@ import io.cucumber.java.en.When;
 import org.example.page.LoginPage;
 import org.example.page.ProductsPage;
 
+import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.open;
 
 public class LoginCucumberSteps {
 
@@ -20,14 +20,14 @@ public class LoginCucumberSteps {
     }
 
     @When("I enter the username {string} and password {string}")
-    public void enterUsernameAndPassword(String username, String password) {
+    public void login(String username, String password) {
         loginPage.userNameField.setValue(username);
         loginPage.passwordField.setValue(password);
         loginPage.loginButton.click();
     }
 
     @Then("I should see the products page with title {string}")
-    public void verifyProductsPageTitle(String expectedTitleName) {
-        productsPage.titleText.shouldHave(text(expectedTitleName));
+    public void verifyLogin(String titleName) {
+        productsPage.titleText.shouldHave(text(titleName));
     }
 }
