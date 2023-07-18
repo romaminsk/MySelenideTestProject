@@ -2,7 +2,6 @@ package org.example.utils;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.example.models.ProductData;
 import org.example.models.TestData;
 import org.example.models.UserData;
 import org.testng.annotations.DataProvider;
@@ -59,4 +58,5 @@ public class JsonReader {
             });
         }
     }
+
 }
