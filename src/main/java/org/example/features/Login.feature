@@ -1,5 +1,6 @@
 Feature: Login feature
 
+  @SmokeTest
   Scenario Outline: Successful login
     Given I am on the login page
     When I enter the username "<username>" and password "<password>"
