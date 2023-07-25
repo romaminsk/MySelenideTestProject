@@ -1,5 +1,4 @@
 import com.codeborne.selenide.SelenideElement;
-import org.example.models.ProductData;
 import org.example.models.TestData;
 import org.example.models.UserData;
 import org.example.steps.LoginSteps;

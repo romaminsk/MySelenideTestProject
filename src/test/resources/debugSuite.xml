@@ -7,9 +7,9 @@
         <parameter name="startType" value="local"/>
 
         <classes>
-            <class name="SauceDemoTest">
+            <class name="LoginAnnotationsTest">
                 <methods>
-                    <include name="loginTest"/>
+                    <include name="loginAnnotationsTest"/>
                 </methods>
             </class>
         </classes>
