@@ -1,0 +1,51 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="MainTest" parallel="tests" thread-count="3">
+
+    <test name="Login">
+
+        <parameter name="startType" value="selenoid"/>
+        <parameter name="browser" value="chrome"/>
+        <parameter name="version" value="latest"/>
+
+        <classes>
+            <class name="SauceDemoTest">
+                <methods>
+                    <include name="loginTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Products">
+
+        <parameter name="startType" value="selenoid"/>
+        <parameter name="browser" value="chrome"/>
+        <parameter name="version" value="latest"/>
+
+        <classes>
+            <class name="SauceDemoTest">
+                <methods>
+                    <include name="addItemToCart"/>
+                    <include name="compareProducts"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Cart">
+
+        <parameter name="startType" value="selenoid"/>
+        <parameter name="browser" value="chrome"/>
+        <parameter name="version" value="latest"/>
+
+        <classes>
+            <class name="CartTest">
+                <methods>
+                    <include name="loginTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

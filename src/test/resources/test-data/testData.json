@@ -1,0 +1,13 @@
+[
+  {
+    "userData": {
+      "username": "standard_user",
+      "password": "secret_sauce"
+    },
+    "productData": {
+      "productName": "Sauce Labs Backpack",
+      "productPrice": "$29.99",
+      "productDescription": "carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection."
+    }
+  }
+]
